@@ -18,7 +18,7 @@
    - Reveal animations
    - Development pathway animation
    - Pathway rank activation
-   - Animated statistics
+   - Repeating animated statistics
    - Hero parallax
    - Interactive editorial scenarios
    - FAQ accordions
@@ -49,7 +49,21 @@ const CONFIG = {
         0.58,
 
     toastDuration:
-        2800
+        2800,
+
+    /*
+     * Statistics
+     *
+     * Slower animation than the previous 1200 ms.
+     */
+    statisticAnimationDuration:
+        1800,
+
+    /*
+     * Statistics replay every 10 seconds.
+     */
+    statisticCycleInterval:
+        10000
 
 };
 
@@ -69,8 +83,20 @@ const STATE = {
     currentExperience:
         "editor",
 
-    statisticsStarted:
-        false
+    /*
+     * Keeps track of statistic replay timers.
+     *
+     * Element -> interval ID
+     */
+    statisticIntervals:
+        new Map(),
+
+    /*
+     * Prevents two statistic animations from running on
+     * the same number at exactly the same time.
+     */
+    statisticAnimating:
+        new WeakSet()
 
 };
 
@@ -630,9 +656,9 @@ function initialiseNavigation() {
                                 href &&
                                 href.startsWith("#")
 
-                                ? href.substring(1)
+                                    ? href.substring(1)
 
-                                : null
+                                    : null
                             );
 
 
@@ -1120,7 +1146,7 @@ function initialiseScrollProgress() {
                 scrollableHeight > 0
 
                     ? documentElement.scrollTop /
-                      scrollableHeight
+                    scrollableHeight
 
                     : 0;
 
@@ -1314,7 +1340,7 @@ function initialiseDevelopmentPathway() {
 
 
     /* =====================================================
-       Initial reveal state
+       INITIAL REVEAL STATE
     ====================================================== */
 
     if (
@@ -1394,7 +1420,7 @@ function initialiseDevelopmentPathway() {
 
 
     /* =====================================================
-       Scroll-following pathway line
+       SCROLL-FOLLOWING PATHWAY LINE
     ====================================================== */
 
     const updatePathway =
@@ -1404,15 +1430,6 @@ function initialiseDevelopmentPathway() {
                 pathway
                     .getBoundingClientRect();
 
-
-            /*
-             * The animation reference point sits slightly
-             * below the centre of the viewer's screen.
-             *
-             * This means the gold line follows what the
-             * user is actually looking at rather than
-             * completing before the ranks are visible.
-             */
 
             const viewportPoint =
 
@@ -1461,10 +1478,6 @@ function initialiseDevelopmentPathway() {
                 `${progress * 100}%`;
 
 
-            /* =================================================
-               Activate ranks as they reach the viewport
-            ================================================== */
-
             pathwayItems.forEach(
                 item => {
 
@@ -1487,11 +1500,6 @@ function initialiseDevelopmentPathway() {
 
                         CONFIG.pathwayActivationPoint;
 
-
-                    /*
-                     * Once the top portion of the item reaches
-                     * the activation point, its node becomes gold.
-                     */
 
                     const active =
 
@@ -1562,15 +1570,17 @@ function initialiseDevelopmentPathway() {
 
 
 /* =========================================================
-   12. STATISTICS
+   12. REPEATING STATISTICS
 ========================================================= */
 
 function initialiseStatistics() {
 
     const statistics =
-        document.querySelectorAll(
-            "[data-statistic]"
-        );
+        [
+            ...document.querySelectorAll(
+                "[data-statistic]"
+            )
+        ];
 
 
     if (
@@ -1582,18 +1592,25 @@ function initialiseStatistics() {
     }
 
 
-    if (
-        !(
-            "IntersectionObserver"
-            in window
-        )
-    ) {
+    /* =====================================================
+       REDUCED MOTION
+    ====================================================== */
+
+    const prefersReducedMotion =
+        window.matchMedia &&
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    if (prefersReducedMotion) {
 
         statistics.forEach(
             statistic => {
 
-                statistic.textContent =
-                    statistic.dataset.statistic;
+                setStatisticFinalValue(
+                    statistic
+                );
 
             }
         );
@@ -1604,6 +1621,42 @@ function initialiseStatistics() {
     }
 
 
+    /* =====================================================
+       FALLBACK FOR OLDER BROWSERS
+    ====================================================== */
+
+    if (
+        !(
+            "IntersectionObserver"
+            in window
+        )
+    ) {
+
+        statistics.forEach(
+            statistic => {
+
+                animateStatistic(
+                    statistic
+                );
+
+
+                startStatisticCycle(
+                    statistic
+                );
+
+            }
+        );
+
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       VISIBILITY OBSERVER
+    ====================================================== */
+
     const observer =
         new IntersectionObserver(
 
@@ -1612,23 +1665,43 @@ function initialiseStatistics() {
                 entries.forEach(
                     entry => {
 
+                        const statistic =
+                            entry.target;
+
+
                         if (
-                            !entry.isIntersecting
+                            entry.isIntersecting
                         ) {
 
-                            return;
+                            /*
+                             * Run immediately on first/re-entry.
+                             */
+                            animateStatistic(
+                                statistic
+                            );
+
+
+                            /*
+                             * Continue every ten seconds while
+                             * the statistic remains visible.
+                             */
+                            startStatisticCycle(
+                                statistic
+                            );
 
                         }
 
+                        else {
 
-                        animateStatistic(
-                            entry.target
-                        );
+                            /*
+                             * Stop repeated cycles while the
+                             * user is elsewhere on the page.
+                             */
+                            stopStatisticCycle(
+                                statistic
+                            );
 
-
-                        observer.unobserve(
-                            entry.target
-                        );
+                        }
 
                     }
                 );
@@ -1638,7 +1711,10 @@ function initialiseStatistics() {
             {
 
                 threshold:
-                    0.55
+                    0.45,
+
+                rootMargin:
+                    "80px 0px 80px 0px"
 
             }
 
@@ -1654,6 +1730,112 @@ function initialiseStatistics() {
 
         }
     );
+
+}
+
+
+/* =========================================================
+   START STATISTIC REPLAY CYCLE
+========================================================= */
+
+function startStatisticCycle(
+    element
+) {
+
+    if (
+        STATE.statisticIntervals.has(
+            element
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const intervalID =
+        window.setInterval(
+            () => {
+
+                animateStatistic(
+                    element
+                );
+
+            },
+            CONFIG.statisticCycleInterval
+        );
+
+
+    STATE.statisticIntervals.set(
+        element,
+        intervalID
+    );
+
+}
+
+
+/* =========================================================
+   STOP STATISTIC REPLAY CYCLE
+========================================================= */
+
+function stopStatisticCycle(
+    element
+) {
+
+    const intervalID =
+        STATE.statisticIntervals.get(
+            element
+        );
+
+
+    if (
+        intervalID === undefined
+    ) {
+
+        return;
+
+    }
+
+
+    window.clearInterval(
+        intervalID
+    );
+
+
+    STATE.statisticIntervals.delete(
+        element
+    );
+
+}
+
+
+/* =========================================================
+   SET FINAL STATISTIC VALUE
+========================================================= */
+
+function setStatisticFinalValue(
+    element
+) {
+
+    const target =
+        Number(
+            element.dataset.statistic
+        );
+
+
+    if (
+        Number.isNaN(
+            target
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    element.textContent =
+        target.toLocaleString();
 
 }
 
@@ -1683,12 +1865,39 @@ function animateStatistic(
     }
 
 
+    /*
+     * Prevent overlapping animations.
+     */
+    if (
+        STATE.statisticAnimating.has(
+            element
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    STATE.statisticAnimating.add(
+        element
+    );
+
+
     const duration =
-        1200;
+        CONFIG.statisticAnimationDuration;
 
 
     const startTime =
         performance.now();
+
+
+    /*
+     * Return the number to zero so the user can
+     * clearly see the statistic rolling again.
+     */
+    element.textContent =
+        "0";
 
 
     function update(
@@ -1708,8 +1917,12 @@ function animateStatistic(
             );
 
 
-        /* Smooth easing */
-
+        /*
+         * Smooth ease-out.
+         *
+         * Fast enough to feel responsive at the beginning,
+         * but deliberately slower than the previous version.
+         */
         const easedProgress =
 
             1
@@ -1747,6 +1960,11 @@ function animateStatistic(
 
             element.textContent =
                 target.toLocaleString();
+
+
+            STATE.statisticAnimating.delete(
+                element
+            );
 
         }
 
@@ -2471,7 +2689,7 @@ function initialiseWindowSafety() {
 
 
     /* =====================================================
-       Close mobile menu when returning to desktop
+       CLOSE MOBILE MENU WHEN RETURNING TO DESKTOP
     ====================================================== */
 
     window.addEventListener(
@@ -2504,7 +2722,7 @@ function initialiseWindowSafety() {
 
 
     /* =====================================================
-       Recalculate open accordion heights after resize
+       RECALCULATE OPEN ACCORDION HEIGHTS
     ====================================================== */
 
     window.addEventListener(
@@ -2542,6 +2760,32 @@ function initialiseWindowSafety() {
             150
         )
 
+    );
+
+
+    /* =====================================================
+       CLEAN STATISTIC INTERVALS WHEN PAGE IS UNLOADED
+    ====================================================== */
+
+    window.addEventListener(
+        "pagehide",
+        () => {
+
+            STATE.statisticIntervals
+                .forEach(
+                    intervalID => {
+
+                        window.clearInterval(
+                            intervalID
+                        );
+
+                    }
+                );
+
+
+            STATE.statisticIntervals.clear();
+
+        }
     );
 
 }
