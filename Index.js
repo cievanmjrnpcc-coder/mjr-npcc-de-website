@@ -406,6 +406,10 @@ function initialiseApplication() {
 
     initialiseBackToTop();
 
+    initialiseEditorialEnergy();
+
+    initialiseChapterPulse();
+
     initialiseWindowSafety();
 
 
@@ -2968,3 +2972,191 @@ window.addEventListener(
 /* =========================================================
    END OF INDEX.JS
 ========================================================= */
+
+
+/* =========================================================
+   EDITORIAL ENERGY
+   Lightweight visual interactions for the prospective site.
+========================================================= */
+
+function initialiseEditorialEnergy() {
+
+    const reducedMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const cards =
+        document.querySelectorAll(
+            ".feature-card, .training-card, .ability-card, " +
+            ".specialisation-card, .value-card, .hero-main-card"
+        );
+
+    cards.forEach(card => {
+
+        card.setAttribute(
+            "data-energy-tilt",
+            ""
+        );
+
+        if (reducedMotion) {
+            return;
+        }
+
+        card.addEventListener(
+            "pointermove",
+            event => {
+
+                if (
+                    event.pointerType === "touch" ||
+                    window.innerWidth < 900
+                ) {
+                    return;
+                }
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    (event.clientX - rect.left) / rect.width;
+
+                const y =
+                    (event.clientY - rect.top) / rect.height;
+
+                const rotateY =
+                    (x - 0.5) * 2.2;
+
+                const rotateX =
+                    (0.5 - y) * 2.2;
+
+                card.style.transform =
+                    `perspective(900px) rotateX(${rotateX}deg) ` +
+                    `rotateY(${rotateY}deg) translateY(-4px)`;
+
+            }
+        );
+
+        card.addEventListener(
+            "pointerleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+
+    const energyWords =
+        document.querySelectorAll(
+            ".hero-energy-words span"
+        );
+
+    if (
+        !reducedMotion &&
+        energyWords.length
+    ) {
+
+        window.addEventListener(
+            "pointermove",
+            throttle(
+                event => {
+
+                    const x =
+                        (event.clientX / window.innerWidth - 0.5);
+
+                    const y =
+                        (event.clientY / window.innerHeight - 0.5);
+
+                    energyWords.forEach(
+                        (word, index) => {
+
+                            const strength =
+                                5 + index * 1.8;
+
+                            word.style.marginLeft =
+                                `${x * strength}px`;
+
+                            word.style.marginTop =
+                                `${y * strength}px`;
+
+                        }
+                    );
+
+                },
+                30
+            ),
+            {
+                passive: true
+            }
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CHAPTER PULSE
+   Gives each main section a subtle "arrival" state so the
+   long page feels like a guided journey.
+========================================================= */
+
+function initialiseChapterPulse() {
+
+    const chapters =
+        document.querySelectorAll(
+            "main section[data-chapter]"
+        );
+
+    if (!chapters.length) {
+        return;
+    }
+
+    if (
+        !("IntersectionObserver" in window)
+    ) {
+
+        chapters.forEach(
+            chapter =>
+                chapter.classList.add(
+                    "chapter-visible"
+                )
+        );
+
+        return;
+    }
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(
+                    entry => {
+
+                        entry.target.classList.toggle(
+                            "chapter-visible",
+                            entry.isIntersecting
+                        );
+
+                    }
+                );
+
+            },
+            {
+                rootMargin:
+                    "-18% 0px -54% 0px",
+                threshold:
+                    0
+            }
+        );
+
+    chapters.forEach(
+        chapter =>
+            observer.observe(
+                chapter
+            )
+    );
+
+}
+
