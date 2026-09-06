@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MJR NPCC Prospective Cadet Experience — discover the Editorial Team, its specialisations, development pathway, progression and founding story.">
+  <meta name="theme-color" content="#f6fbff">
+
+  <title>MJR NPCC | Prospective Cadet Experience</title>
+
+  <!-- Keep the logo file in the same folder as index.html -->
+  <link rel="icon" type="image/png" href="MJR NPCC Logo Transparent.png">
+  <link rel="shortcut icon" type="image/png" href="MJR NPCC Logo Transparent.png">
+  <link rel="apple-touch-icon" href="MJR NPCC Logo Transparent.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("mjrEditorialTheme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body data-build="v43-dark-mode">
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgress"></div>
+  </div>
+
+  <div class="page-loader active" id="pageLoader" aria-hidden="true">
+    <div class="page-loader__orb">
+      <img src="MJR NPCC Logo Transparent.png" alt="">
+    </div>
+    <p>Preparing your experience</p>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-shell glass-panel">
+      <a class="brand" href="#home" aria-label="MJR NPCC Prospective Cadet Experience home">
+        <span class="brand__logo">
+          <img src="MJR NPCC Logo Transparent.png" alt="MJR NPCC logo">
+        </span>
+        <span class="brand__copy">
+          <strong>MJR NPCC</strong>
+          <small>Editorial Team</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#roles" class="nav-link">Roles</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <span class="theme-toggle__sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="button button--small button--primary desktop-cta" type="button" data-scroll-to="experience">
+          Explore Editorial <span>→</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav glass-panel" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#home">Home</a>
+      <a href="#work">What We Do</a>
+      <a href="#experience">Experience</a>
+      <a href="#journey">Your Journey</a>
+      <a href="#roles">Roles</a>
+      <a href="#training">Training</a>
+      <a href="#structure">Structure</a>
+      <a href="#story">Our Story</a>
+      <a href="#founders">Founding Committee</a>
+      <a href="#requirements">Entry Requirements</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <!-- =====================================================
+         01 — HERO
+    ====================================================== -->
+    <section class="hero" id="home">
+      <div class="aurora aurora--one"></div>
+      <div class="aurora aurora--two"></div>
+      <div class="aurora aurora--three"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="shell hero-layout">
+        <div class="hero-copy">
+          <div class="eyebrow reveal-up">
+            <span class="eyebrow-dot"></span>
+            MJR NPCC · EDITORIAL TEAM · EST. 2026
+          </div>
+
+          <h1 class="hero-title reveal-up" style="--delay:80ms">
+            More Than<br>
+            <span class="gradient-text">Documents.</span>
+          </h1>
+
+          <p class="hero-mantra reveal-up" style="--delay:150ms">
+            Create<span class="hero-dot">.</span> Communicate<span class="hero-dot">.</span> <span>Lead<span class="hero-dot">.</span></span>
+          </p>
+
+          <p class="hero-description reveal-up" style="--delay:220ms">
+            A specialist cadet team where ideas become resources, information becomes systems, and every contribution helps the next generation start stronger.
+          </p>
+
+          <div class="hero-actions reveal-up" style="--delay:290ms">
+            <button class="button button--primary button--large" type="button" data-scroll-to="experience">Explore Your Experience <span>→</span></button>
+            <button class="button button--ghost button--large" type="button" data-scroll-to="journey">See Your Journey</button>
+          </div>
+
+          <div class="hero-identity-line reveal-up" style="--delay:360ms">
+            <span>One team.</span>
+            <span>Four pathways.</span>
+            <strong>A system built to continue.</strong>
+          </div>
+        </div>
+
+        <div class="hero-pillar-board reveal-up" style="--delay:180ms" aria-label="Editorial Team pillars">
+          <article class="hero-pillar hero-pillar--editorial">
+            <div class="hero-pillar__top"><span class="hero-pillar__number">01</span><span class="hero-pillar__icon">✎</span></div>
+            <div class="hero-pillar__copy"><h3>Editorial</h3><p>Craft clear, accurate and consistent documents.</p></div>
+            <span class="hero-pillar__role">Document Editor</span>
+          </article>
+
+          <article class="hero-pillar hero-pillar--communication">
+            <div class="hero-pillar__top"><span class="hero-pillar__number">02</span><span class="hero-pillar__icon">◌</span></div>
+            <div class="hero-pillar__copy"><h3>Communication</h3><p>Shape information so people understand what matters.</p></div>
+            <span class="hero-pillar__role">Communication Editor</span>
+          </article>
+
+          <article class="hero-pillar hero-pillar--systems">
+            <div class="hero-pillar__top"><span class="hero-pillar__number">03</span><span class="hero-pillar__icon">◇</span></div>
+            <div class="hero-pillar__copy"><h3>Systems</h3><p>Organise records, data and workflows for continuity.</p></div>
+            <span class="hero-pillar__role">Database Editor</span>
+          </article>
+
+          <article class="hero-pillar hero-pillar--support">
+            <div class="hero-pillar__top"><span class="hero-pillar__number">04</span><span class="hero-pillar__icon">✦</span></div>
+            <div class="hero-pillar__copy"><h3>Support</h3><p>Strengthen projects, coordination and cross-team needs.</p></div>
+            <span class="hero-pillar__role">Support Specialist</span>
+          </article>
+
+          <div class="hero-pillar-board__badge" aria-hidden="true">
+            <img src="MJR NPCC Logo Transparent.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="shell stats-strip stats-strip--matched stats-strip--v3 glass-panel reveal" aria-label="Editorial Team statistics">
+        <article class="stat-card">
+          <span class="stat-icon" aria-hidden="true">▦</span>
+          <div class="stat-copy">
+            <strong data-count="4">0</strong>
+            <small>Editorial Specialisations</small>
+          </div>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon" aria-hidden="true">▤</span>
+          <div class="stat-copy">
+            <strong data-count="48">0</strong>
+            <small>Resources Created</small>
+          </div>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon" aria-hidden="true">▥</span>
+          <div class="stat-copy">
+            <strong data-count="5">0</strong>
+            <small>Google Workspace Platforms</small>
+          </div>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon" aria-hidden="true">✦</span>
+          <div class="stat-copy">
+            <strong data-count="4">0</strong>
+            <small>Editorial Hubs</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         02 — WHAT EDITORIAL IS
+    ====================================================== -->
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-heading section-heading--center reveal">
+          <span class="section-kicker">WHAT EDITORIAL MEANS</span>
+          <h2>Where structure meets <span class="gradient-text">creativity.</span></h2>
+          <p>Editorial is not one task. It is how we make information useful, consistent and easier for others to continue.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card glass-card reveal" style="--delay:0ms">
+            <span class="pillar-number">01</span><span class="pillar-icon">✦</span>
+            <h3>Editorial</h3><p>Turn ideas and information into clear, structured resources people can actually use.</p>
+          </article>
+          <article class="pillar-card glass-card reveal" style="--delay:80ms">
+            <span class="pillar-number">02</span><span class="pillar-icon">◌</span>
+            <h3>Communication</h3><p>Make instructions, announcements and information clear to the people receiving them.</p>
+          </article>
+          <article class="pillar-card glass-card reveal" style="--delay:160ms">
+            <span class="pillar-number">03</span><span class="pillar-icon">◇</span>
+            <h3>Systems</h3><p>Build reliable records, databases and structures that do not depend on one person's memory.</p>
+          </article>
+          <article class="pillar-card glass-card reveal" style="--delay:240ms">
+            <span class="pillar-number">04</span><span class="pillar-icon">↗</span>
+            <h3>Support</h3><p>Strengthen projects, coordination and team needs that cut across the specialist pathways.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         03 — BEHIND THE WORK
+    ====================================================== -->
+    <section class="section section--tint" id="work">
+      <div class="shell">
+        <div class="section-heading section-heading--split reveal">
+          <div>
+            <span class="section-kicker">BEHIND THE WORK</span>
+            <h2>What Editors actually <span class="gradient-text">create.</span></h2>
+          </div>
+          <p>Prospective cadets should be able to picture the work — not just read a job description. These are the kinds of outputs and systems Editorial supports.</p>
+        </div>
+
+        <div class="work-showcase">
+          <article class="work-card work-card--wide glass-card reveal">
+            <div class="output-preview output-preview--document">
+              <div class="preview-topbar">
+                <span class="preview-file">Editorial Guide</span>
+                <span class="preview-status">v1.2</span>
+              </div>
+              <div class="document-page">
+                <span class="document-kicker">MJR NPCC EDITORIAL</span>
+                <strong>Document Standards Guide</strong>
+                <p>Formatting, structure and quality checks</p>
+                <div class="document-section">
+                  <b>01 &nbsp; Before publishing</b>
+                  <span>Check title, spacing and document format</span>
+                  <span>Verify names, dates and required information</span>
+                </div>
+                <div class="document-checks">
+                  <span>✓ Formatting</span><span>✓ Accuracy</span><span>✓ Final review</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-card__copy"><span class="chip">DOCUMENTS</span><h3>Guides, templates & resources</h3><p>Build structured materials that make expectations easier to understand and follow.</p></div>
+          </article>
+
+          <article class="work-card glass-card reveal" style="--delay:80ms">
+            <div class="output-preview output-preview--communication">
+              <div class="announcement-header">
+                <span>UNIT ANNOUNCEMENT</span>
+                <b>SCHEDULED</b>
+              </div>
+              <div class="announcement-body">
+                <small>FOR: SEC 2 &amp; SEC 3 CADETS</small>
+                <strong>Campcraft Practice Update</strong>
+                <p>Please report at the designated area by 1500 hrs with the required equipment.</p>
+                <div class="announcement-meta"><span>Tuesday</span><span>1500–1700</span><span>Parade Square</span></div>
+              </div>
+              <div class="announcement-footer"><span>Clear message</span><span>Correct audience</span><span>Ready to publish</span></div>
+            </div>
+            <div class="work-card__copy"><span class="chip chip--purple">COMMUNICATION</span><h3>Announcements & publications</h3><p>Present information with clarity, consistency and purpose.</p></div>
+          </article>
+
+          <article class="work-card glass-card reveal" style="--delay:160ms">
+            <div class="output-preview output-preview--systems">
+              <div class="tracker-title">
+                <div><small>EDITORIAL DATABASE</small><strong>Resource Tracker</strong></div>
+                <span>12 records</span>
+              </div>
+              <div class="tracker-table">
+                <div class="tracker-row tracker-row--head"><span>Resource</span><span>Owner</span><span>Status</span><span>Updated</span></div>
+                <div class="tracker-row"><span>Drill Guide</span><span>DE</span><b class="status status--done">Current</b><span>28 Aug</span></div>
+                <div class="tracker-row"><span>Unit Contacts</span><span>DBE</span><b class="status status--review">Review</b><span>30 Aug</span></div>
+                <div class="tracker-row"><span>Campcraft Ref.</span><span>DE</span><b class="status status--done">Current</b><span>31 Aug</span></div>
+                <div class="tracker-row"><span>Project Log</span><span>SS</span><b class="status status--work">Active</b><span>1 Sep</span></div>
+              </div>
+            </div>
+            <div class="work-card__copy"><span class="chip chip--cyan">SYSTEMS</span><h3>Databases & tracking</h3><p>Keep information organised, retrievable and usable by the team.</p></div>
+          </article>
+
+          <article class="work-card work-card--wide glass-card reveal" style="--delay:240ms">
+            <div class="output-preview output-preview--support">
+              <div class="project-head">
+                <div><small>EDITORIAL PROJECT</small><strong>Resource Refresh</strong></div>
+                <span>3 / 4 complete</span>
+              </div>
+              <div class="project-board">
+                <div class="project-task"><span class="task-check">✓</span><div><b>Review existing guide</b><small>Completed · DE</small></div></div>
+                <div class="project-task"><span class="task-check">✓</span><div><b>Check database records</b><small>Completed · DBE</small></div></div>
+                <div class="project-task"><span class="task-check task-check--active">→</span><div><b>Prepare updated release</b><small>In progress · SS</small></div></div>
+                <div class="project-task"><span class="task-check task-check--pending">○</span><div><b>Publish &amp; handover</b><small>Pending · Team</small></div></div>
+              </div>
+              <div class="project-progress"><span></span></div>
+            </div>
+            <div class="work-card__copy"><span class="chip chip--pink">SUPPORT</span><h3>Projects & continuity</h3><p>Help cross-team work move forward and turn useful experience into something future Editors can continue.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         04 — EXPERIENCE
+    ====================================================== -->
+    <section class="section experience-section" id="experience">
+      <div class="aurora aurora--experience"></div>
+      <div class="shell">
+        <div class="section-heading section-heading--center reveal">
+          <span class="section-kicker">EXPERIENCE IT YOUR WAY</span>
+          <h2>Don't just read about it. <span class="gradient-text">Try it.</span></h2>
+          <p>Pick a situation, make a decision and see which Editorial strength your choice demonstrates.</p>
+        </div>
+
+        <div class="experience-layout">
+          <div class="experience-menu reveal" role="tablist" aria-label="Editorial experience scenarios">
+            <button class="experience-tab active" type="button" data-experience="detail" role="tab">
+              <span class="experience-tab__icon">⌕</span><span><small>01</small><strong>The Detail-Checker</strong><em>Accuracy & judgement</em></span>
+            </button>
+            <button class="experience-tab" type="button" data-experience="system" role="tab">
+              <span class="experience-tab__icon">◇</span><span><small>02</small><strong>The System Builder</strong><em>Organisation & continuity</em></span>
+            </button>
+            <button class="experience-tab" type="button" data-experience="comms" role="tab">
+              <span class="experience-tab__icon">◌</span><span><small>03</small><strong>The Communicator</strong><em>Clarity & audience</em></span>
+            </button>
+            <button class="experience-tab" type="button" data-experience="leader" role="tab">
+              <span class="experience-tab__icon">⚑</span><span><small>04</small><strong>The Leader</strong><em>Standards & development</em></span>
+            </button>
+          </div>
+
+          <article class="experience-panel glass-panel reveal" id="experiencePanel" aria-live="polite">
+            <div class="experience-panel__top">
+              <span class="chip" id="experienceLabel">DETAIL-CHECKER</span>
+              <span class="experience-score" id="experienceNumber">01 / 04</span>
+            </div>
+            <h3 id="experienceTitle">A guide must be released today, but one instruction looks questionable.</h3>
+            <p id="experienceDescription">The layout is almost finished. You can make it look polished quickly, but the questionable instruction may affect how others carry out the task.</p>
+            <div class="experience-meta"><span><small>SKILL</small><strong id="experienceSkill">Judgement & precision</strong></span><span><small>PRIORITY</small><strong id="experiencePriority">Accuracy before speed</strong></span></div>
+            <div class="experience-choices" id="experienceChoices"></div>
+            <div class="experience-feedback" id="experienceFeedback" hidden></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         05 — JOURNEY
+    ====================================================== -->
+    <section class="section section--tint" id="journey">
+      <div class="shell shell--wide">
+        <div class="section-heading section-heading--split reveal">
+          <div>
+            <span class="section-kicker">YOUR JOURNEY</span>
+            <h2>Start somewhere.<br><span class="gradient-text">Grow from there.</span></h2>
+          </div>
+          <p>You begin by learning the fundamentals, grow into a specialist pathway, then take on wider responsibility as your judgement, reliability and leadership develop.</p>
+        </div>
+
+        <div class="career-journey reveal" data-journey-v7>
+
+          <section class="career-stage career-stage--foundation">
+            <header class="career-stage__header">
+              <span>01</span>
+              <div>
+                <small>FOUNDATION</small>
+                <h3>Learn the craft</h3>
+              </div>
+            </header>
+
+            <div class="career-stage__content career-stage__content--two">
+              <article class="career-card">
+                <span class="career-card__step">01</span>
+                <div class="career-card__icon">✦</div>
+                <div>
+                  <small>DISCOVER</small>
+                  <h4>Prospective Candidate</h4>
+                  <p>Understand what Editorial does and whether the team suits you.</p>
+                </div>
+              </article>
+
+              <div class="career-arrow" aria-hidden="true">→</div>
+
+              <article class="career-card">
+                <span class="career-card__step">02</span>
+                <div class="career-card__icon">▤</div>
+                <div>
+                  <small>LEARN</small>
+                  <h4>Assistant Editor</h4>
+                  <p>Build your foundation through guided practice, feedback and real tasks.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <div class="career-down" aria-hidden="true"><span>↓</span></div>
+
+          <section class="career-stage career-stage--specialise">
+            <header class="career-stage__header">
+              <span>02</span>
+              <div>
+                <small>SPECIALISE</small>
+                <h3>Choose where you contribute</h3>
+              </div>
+            </header>
+
+            <div class="specialist-heading">
+              <span class="career-card__step">03</span>
+              <div>
+                <small>SPECIALIST EDITOR</small>
+                <p>Develop deeper capability in one of four pathways.</p>
+              </div>
+            </div>
+
+            <div class="specialist-grid">
+              <article class="specialist-card specialist-card--blue"><b>DE</b><strong>Document Editor</strong><small>Documents · quality · standards</small></article>
+              <article class="specialist-card specialist-card--violet"><b>CC</b><strong>Communication Editor</strong><small>Messaging · clarity · publications</small></article>
+              <article class="specialist-card specialist-card--cyan"><b>DBE</b><strong>Database Editor</strong><small>Records · data · systems</small></article>
+              <article class="specialist-card specialist-card--pink"><b>SS</b><strong>Support Specialist</strong><small>Projects · support · development</small></article>
+            </div>
+          </section>
+
+          <div class="career-down" aria-hidden="true"><span>↓</span></div>
+
+          <section class="career-stage career-stage--leadership">
+            <header class="career-stage__header">
+              <span>03</span>
+              <div>
+                <small>LEADERSHIP</small>
+                <h3>Take greater ownership</h3>
+              </div>
+            </header>
+
+            <div class="leadership-flow">
+              <article class="leadership-card">
+                <span>04</span><small>DEVELOP OTHERS</small><h4>Senior Editor</h4><p>Review work, handle complex tasks and guide newer Editors.</p>
+              </article>
+              <div class="leadership-arrow">→</div>
+              <article class="leadership-card leadership-card--ace">
+                <span>05</span><small>LEAD A BRANCH</small><h4>Assistant Chief Editor</h4><p>Own a major portfolio and develop its people and standards.</p>
+                <div class="ace-paths"><b>Editorial &amp; Communications</b><b>Systems &amp; Development</b></div>
+              </article>
+              <div class="leadership-arrow">→</div>
+              <article class="leadership-card">
+                <span>06</span><small>COORDINATE</small><h4>Deputy Chief Editor</h4><p>Align both branches and turn team direction into execution.</p>
+              </article>
+              <div class="leadership-arrow">→</div>
+              <article class="leadership-card leadership-card--chief">
+                <span>07</span><small>SET DIRECTION</small><h4>Chief Editor</h4><p>Define standards, direction and the team's long-term purpose.</p>
+              </article>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         06 — ROLES
+    ====================================================== -->
+    <section class="section" id="roles">
+      <div class="shell">
+        <div class="section-heading section-heading--center reveal">
+          <span class="section-kicker">FIND YOUR PLACE</span>
+          <h2>Four pathways. <span class="gradient-text">One team.</span></h2>
+          <p>Each specialisation contributes differently, but all four depend on accuracy, teamwork and a willingness to learn.</p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card role-card--blue glass-card reveal">
+            <div class="role-card__icon">✎</div><span class="role-code">DE</span><h3>Document Editor</h3><strong>Turn information into structure.</strong><p>Develop documents, templates and resources that are consistent, professional and easy to use.</p>
+            <ul><li>Formatting & structure</li><li>Document quality</li><li>Standards & consistency</li></ul>
+          </article>
+          <article class="role-card role-card--violet glass-card reveal" style="--delay:70ms">
+            <div class="role-card__icon">◌</div><span class="role-code">COMMS</span><h3>Communication Editor</h3><strong>Make information clear.</strong><p>Shape announcements, written communication and publications for the people who need them.</p>
+            <ul><li>Writing & messaging</li><li>Audience awareness</li><li>Presentation of information</li></ul>
+          </article>
+          <article class="role-card role-card--cyan glass-card reveal" style="--delay:140ms">
+            <div class="role-card__icon">◇</div><span class="role-code">DBE</span><h3>Database Editor</h3><strong>Turn information into systems.</strong><p>Organise records, maintain accurate data and improve how information is tracked and retrieved.</p>
+            <ul><li>Data organisation</li><li>Tracking systems</li><li>Accuracy & continuity</li></ul>
+          </article>
+          <article class="role-card role-card--pink glass-card reveal" style="--delay:210ms">
+            <div class="role-card__icon">✦</div><span class="role-code">SS</span><h3>Support Specialist</h3><strong>Help good ideas become workable.</strong><p>Support projects, training, systems and cross-team needs that do not sit neatly within one specialist pathway.</p>
+            <ul><li>Projects & support</li><li>Problem solving</li><li>Team development</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         07 — TRAINING
+    ====================================================== -->
+    <section class="section section--tint" id="training">
+      <div class="shell">
+        <div class="training-layout">
+          <div class="training-intro reveal">
+            <span class="section-kicker">HOW YOU'LL LEARN</span>
+            <h2>You learn by <span class="gradient-text">doing.</span></h2>
+            <p>Training is designed to move from understanding the basics to producing real work with increasing independence.</p>
+            <div class="training-badge glass-card"><span>10</span><div><strong>Structured Modules</strong><small>supported by practical work and feedback</small></div></div>
+          </div>
+
+          <div class="training-steps">
+            <article class="training-card glass-card reveal"><span>01</span><div><h3>Learn</h3><p>Understand Editorial standards, tools and expectations.</p></div></article>
+            <article class="training-card glass-card reveal" style="--delay:60ms"><span>02</span><div><h3>Try</h3><p>Practise through guided activities and realistic examples.</p></div></article>
+            <article class="training-card glass-card reveal" style="--delay:120ms"><span>03</span><div><h3>Create</h3><p>Produce documents, systems or communications using what you learnt.</p></div></article>
+            <article class="training-card glass-card reveal" style="--delay:180ms"><span>04</span><div><h3>Review</h3><p>Receive feedback, understand mistakes and improve your approach.</p></div></article>
+            <article class="training-card glass-card reveal" style="--delay:240ms"><span>05</span><div><h3>Contribute</h3><p>Apply your skills to actual Editorial work and team projects.</p></div></article>
+            <article class="training-card glass-card reveal" style="--delay:300ms"><span>06</span><div><h3>Guide</h3><p>As you progress, help the next Editor build their own capability.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         08 — STRUCTURE
+    ====================================================== -->
+    <section class="section" id="structure">
+      <div class="shell shell--wide">
+        <div class="section-heading section-heading--center reveal">
+          <span class="section-kicker">HOW THE TEAM FITS TOGETHER</span>
+          <h2>Leadership with <span class="gradient-text">clear ownership.</span></h2>
+          <p>One leadership team, supported by two specialist portfolios.</p>
+        </div>
+
+        <div class="org-chart org-chart--simple reveal">
+          <div class="org-simple-top">
+            <div class="org-simple-node org-simple-node--adviser">
+              <small>ADVISORY ROLE</small>
+              <strong>Editorial Adviser</strong>
+              <p>Provides guidance, continuity and perspective to the Editorial leadership team.</p>
+            </div>
+            <span class="org-simple-stem org-simple-stem--advisory" aria-hidden="true"></span>
+
+            <div class="org-simple-node org-simple-node--ce">
+              <small>TEAM DIRECTION</small>
+              <strong>Chief Editor</strong>
+              <p>Sets direction, standards and long-term priorities.</p>
+            </div>
+            <span class="org-simple-stem" aria-hidden="true"></span>
+
+            <div class="org-simple-node">
+              <small>TEAM COORDINATION</small>
+              <strong>Deputy Chief Editor</strong>
+              <p>Coordinates both portfolios and oversees execution.</p>
+            </div>
+          </div>
+
+          <div class="org-simple-fork" aria-hidden="true">
+            <span></span><i></i><i></i>
+          </div>
+
+          <div class="org-simple-ace-row">
+            <div class="org-simple-branch org-simple-branch--editorial">
+              <div class="org-simple-node org-simple-node--ace">
+                <small>EDITORIAL &amp; COMMUNICATIONS</small>
+                <strong>Assistant Chief Editor</strong>
+                <p>Leads document standards, communication quality and editorial work.</p>
+              </div>
+              <div class="org-simple-subfork" aria-hidden="true"><span></span><i></i><i></i></div>
+              <div class="org-simple-role-row">
+                <article><b>DE</b><strong>Document Editor</strong><p>Creates clear, consistent documents and maintains editorial standards.</p></article>
+                <article><b>CC</b><strong>Communication Editor</strong><p>Shapes messages and publications so information stays clear and purposeful.</p></article>
+              </div>
+            </div>
+
+            <div class="org-simple-branch org-simple-branch--systems">
+              <div class="org-simple-node org-simple-node--ace org-simple-node--ace-cyan">
+                <small>SYSTEMS &amp; DEVELOPMENT</small>
+                <strong>Assistant Chief Editor</strong>
+                <p>Leads systems, databases, support projects and team development.</p>
+              </div>
+              <div class="org-simple-subfork org-simple-subfork--cyan" aria-hidden="true"><span></span><i></i><i></i></div>
+              <div class="org-simple-role-row">
+                <article><b>DBE</b><strong>Database Editor</strong><p>Organises records and maintains reliable data and tracking systems.</p></article>
+                <article><b>SS</b><strong>Support Specialist</strong><p>Supports projects, workflows and cross-team development needs.</p></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         09 — STORY
+    ====================================================== -->
+    <section class="section story-section" id="story">
+      <div class="shell shell--wide">
+        <div class="story-header reveal">
+          <span class="section-kicker">OUR STORY</span>
+          <h2>Every system has a <span class="gradient-text">first version.</span></h2>
+          <p>The founding phase was never meant to be the finished product. It was the starting point for a team future cadets could inherit and continue.</p>
+        </div>
+
+        <div class="story-timeline story-timeline--wide reveal">
+          <article class="story-year story-year--foundation">
+            <span class="story-stage">FOUNDATION</span>
+            <span class="story-marker">2026</span>
+            <div><strong>Where it began.</strong><p>The Editorial Team establishes its structure, standards and specialist pathways.</p></div>
+          </article>
+          <article class="story-year story-year--continuity">
+            <span class="story-stage">CONTINUITY</span>
+            <span class="story-marker">2027</span>
+            <div><strong>The first ordinary intake.</strong><p>The founding structure begins transitioning into a continuing cadet-led team.</p></div>
+          </article>
+          <article class="story-year story-year--future">
+            <span class="story-stage">FUTURE</span>
+            <span class="story-marker story-marker--next">NEXT</span>
+            <div><strong>Built to continue.</strong><p>Each generation inherits the system, improves it and leaves something stronger behind.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         10 — FOUNDING COMMITTEE
+    ====================================================== -->
+    <section class="section founding-section" id="founders">
+      <div class="aurora aurora--founders"></div>
+      <div class="shell shell--wide">
+        <div class="section-heading section-heading--center reveal">
+          <span class="section-kicker">OUR FOUNDATION</span>
+          <h2>The Founding Editorial <span class="gradient-text">Committee.</span></h2>
+          <p>Ten members. Different strengths. One starting point. Tap any member to open their founding profile.</p>
+        </div>
+
+        <div class="founding-tree founding-tree--panel-lineage glass-panel reveal">
+          <div class="founding-lead-stack founding-lead-stack--panel-lineage">
+            <button class="founder-card founder-card--lead founder-card--panel-lead" type="button" data-founder="evan">
+              <span class="founder-tag">FOUNDING LEAD</span>
+              <strong>Evan Huang</strong>
+              <small>Chief Editor</small>
+            </button>
+
+            <span class="founding-vertical-line founding-vertical-line--panel-lineage" aria-hidden="true"></span>
+
+            <button class="founder-card founder-card--lead founder-card--panel-lead" type="button" data-founder="megan">
+              <span class="founder-tag">FOUNDING LEAD</span>
+              <strong>Megan Yeo</strong>
+              <small>Deputy Chief Editor</small>
+            </button>
+          </div>
+
+          <div class="founding-panel-split" aria-hidden="true">
+            <span class="founding-panel-split__stem"></span>
+            <span class="founding-panel-split__bar"></span>
+            <span class="founding-panel-split__left"></span>
+            <span class="founding-panel-split__right"></span>
+          </div>
+
+          <div class="founding-panel-grid">
+            <section class="founding-panel-branch founding-panel-branch--editorial">
+              <header class="founding-branch-heading founding-branch-heading--panel">
+                <span>EDITORIAL &amp; COMMUNICATIONS</span>
+                <p>Document and Communication specialisations</p>
+              </header>
+
+              <div class="founding-panel-ace-wrap founding-panel-ace-wrap--violet">
+                <button class="founder-card founder-card--ace founder-card--panel-ace" type="button" data-founder="waidong">
+                  <strong>Goh Wai Dong</strong>
+                  <small>Assistant Chief Editor</small>
+                  <em>Editorial &amp; Communications</em>
+                </button>
+              </div>
+
+              <div class="founding-panel-members founding-panel-members--four" aria-hidden="true"></div>
+              <div class="founding-member-grid founding-member-grid--four founding-member-grid--panel">
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="averyl">
+                  <strong>Averyl Yeo</strong><small>Document Editor</small>
+                </button>
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="yuna">
+                  <strong>Yuna Goh</strong><small>Document Editor</small>
+                </button>
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="andrea">
+                  <strong>Andrea Lim</strong><small>Document Editor</small>
+                </button>
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="caroline">
+                  <strong>Caroline Ow</strong><small>Communication Editor</small>
+                </button>
+              </div>
+            </section>
+
+            <section class="founding-panel-branch founding-panel-branch--systems">
+              <header class="founding-branch-heading founding-branch-heading--panel">
+                <span>SYSTEMS &amp; DEVELOPMENT</span>
+                <p>Database and Support specialisations</p>
+              </header>
+
+              <div class="founding-panel-ace-wrap founding-panel-ace-wrap--cyan">
+                <button class="founder-card founder-card--ace founder-card--panel-ace founder-card--ace-cyan" type="button" data-founder="kezia">
+                  <strong>Kezia Zheng</strong>
+                  <small>Assistant Chief Editor</small>
+                  <em>Systems &amp; Development</em>
+                </button>
+              </div>
+
+              <div class="founding-panel-members founding-panel-members--three" aria-hidden="true"></div>
+              <div class="founding-member-grid founding-member-grid--three founding-member-grid--panel">
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="hongyee">
+                  <strong>Chua Hong Yee</strong><small>Database Editor</small>
+                </button>
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="danysh">
+                  <strong>Danysh Syafael</strong><small>Support Specialist</small>
+                </button>
+                <button class="founder-card founder-card--member founder-card--panel-member" type="button" data-founder="haozhe">
+                  <strong>Chen Hao Zhe</strong><small>Specialist Support</small>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <p class="founding-hint">Tap any name to open their founding profile and message space.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder modal -->
+    <div class="modal" id="founderModal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card glass-panel" role="dialog" aria-modal="true" aria-labelledby="founderModalName">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close founder profile">×</button>
+        <span class="modal-kicker" id="founderModalTag">FOUNDING MEMBER</span>
+        <h3 id="founderModalName">Member Name</h3>
+        <p class="modal-role" id="founderModalRole">Role</p>
+        <div class="modal-divider"></div>
+        <span class="modal-label">FOUNDING PROFILE</span>
+        <p id="founderModalProfile"></p>
+        <div class="member-message-box">
+          <span>PERSONAL MESSAGE</span>
+          <p id="founderModalMessage">A short testimonial or message to future Editors can be added here.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         11 — REQUIREMENTS
+    ====================================================== -->
+    <section class="section section--tint" id="requirements">
+      <div class="shell">
+        <div class="requirements-layout">
+          <div class="requirements-copy reveal">
+            <span class="section-kicker">WHAT WE LOOK FOR</span>
+            <h2>You don't need to be an expert <span class="gradient-text">on Day One.</span></h2>
+            <p>Editorial skills can be taught. What matters most is whether you are willing to learn, work well with others and communicate clearly enough to contribute as part of the team.</p>
+            <div class="quality-cloud">
+              <span>Minimum Secondary 2</span>
+              <span>Keen to Learn</span>
+              <span>Good Conduct</span>
+              <span>Decent Maturity</span>
+              <span>Teamwork</span>
+              <span>English Literacy</span>
+            </div>
+          </div>
+
+          <div class="eligibility-card glass-panel reveal">
+            <span class="chip">BASIC ELIGIBILITY</span>
+            <h3>What we look for</h3>
+
+            <div class="eligibility-row">
+              <span>01</span>
+              <div>
+                <strong>Minimum Secondary 2</strong>
+                <small>You should be at least Secondary 2 when joining the Editorial Team.</small>
+              </div>
+            </div>
+
+            <div class="eligibility-row">
+              <span>02</span>
+              <div>
+                <strong>Keen to know and learn more</strong>
+                <small>Come with curiosity, an open mind and a willingness to develop new skills.</small>
+              </div>
+            </div>
+
+            <div class="eligibility-row">
+              <span>03</span>
+              <div>
+                <strong>Decent to good conduct &amp; maturity</strong>
+                <small>Show responsibility, appropriate behaviour and the maturity to learn from feedback.</small>
+              </div>
+            </div>
+
+            <div class="eligibility-row">
+              <span>04</span>
+              <div>
+                <strong>Able to work as a team</strong>
+                <small>Be willing to cooperate, communicate and contribute alongside other Editors.</small>
+              </div>
+            </div>
+
+            <div class="eligibility-row">
+              <span>05</span>
+              <div>
+                <strong>Basic English proficiency</strong>
+                <small>Be able to understand, read, write and type in English for everyday Editorial work.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         12 — FAQ
+    ====================================================== -->
+    <section class="section" id="faq">
+      <div class="shell faq-layout">
+        <div class="faq-intro reveal">
+          <span class="section-kicker">FAQ</span>
+          <h2>Still <span class="gradient-text">curious?</span></h2>
+          <p>Here are the questions a prospective Editor is most likely to ask before deciding whether the team is for them.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item glass-card reveal">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Do I need to already be good at editing?</span><i>+</i></button>
+            <div class="faq-answer"><p>No. The purpose of the training pathway is to build those skills progressively. A willingness to learn and improve matters more than arriving with perfect technical ability.</p></div>
+          </article>
+          <article class="faq-item glass-card reveal">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Can I choose my specialisation?</span><i>+</i></button>
+            <div class="faq-answer"><p>Your interests and strengths can be considered, but appointments should also reflect training performance, team needs and where you can contribute most effectively.</p></div>
+          </article>
+          <article class="faq-item glass-card reveal">
+            <button class="faq-question" type="button" aria-expanded="false"><span>What happens during training?</span><i>+</i></button>
+            <div class="faq-answer"><p>You learn the standards, practise through guided tasks, complete practical work, receive feedback and gradually apply those skills to real Editorial responsibilities.</p></div>
+          </article>
+          <article class="faq-item glass-card reveal">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Can Editors progress into leadership?</span><i>+</i></button>
+            <div class="faq-answer"><p>Yes. Progression can lead from Assistant Editor to specialist Editor, Senior Editor, Assistant Chief Editor, Deputy Chief Editor and Chief Editor as capability and responsibility grow.</p></div>
+          </article>
+          <article class="faq-item glass-card reveal">
+            <button class="faq-question" type="button" aria-expanded="false"><span>Does being invited guarantee selection?</span><i>+</i></button>
+            <div class="faq-answer"><p>No. An invitation gives a cadet the opportunity to explore and be considered. Final selection should still depend on eligibility, conduct, training and suitability.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         13 — FINAL CTA
+    ====================================================== -->
+    <section class="final-cta" id="nextChapter">
+      <div class="shell">
+        <div class="final-cta-card reveal">
+          <div class="final-cta-glow"></div>
+          <div>
+            <span>THE NEXT GENERATION</span>
+            <h2>Ready to write the <strong>next chapter?</strong></h2>
+            <p>Start curious. Learn the craft. Leave the system better than you found it.</p>
+          </div>
+          <div class="final-cta-actions">
+            <button class="button button--white" type="button" data-scroll-to="roles">Explore the Roles <span>→</span></button>
+            <button class="button button--outline-white" type="button" data-scroll-to="requirements">Check Eligibility</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-layout">
+      <div class="footer-brand">
+        <img src="MJR NPCC Logo Transparent.png" alt="MJR NPCC logo">
+        <div><strong>MJR NPCC Editorial Team</strong><span>Established 2026 · Built for the next generation.</span></div>
+      </div>
+      <p>© 2026 MJR NPCC Editorial Team. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top glass-panel" id="backToTop" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
